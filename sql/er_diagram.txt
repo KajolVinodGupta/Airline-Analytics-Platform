@@ -1,0 +1,73 @@
+========================================
+         AIRLINE ANALYTICS PLATFORM
+                 ER DIAGRAM
+========================================
+
+airline_info  (1) ------- (∞) flight_history
+airline_info  (1) ------- (∞) sales_data
+
+airport_info  (1) ------- (∞) flight_history (origin_airport)
+airport_info  (1) ------- (∞) flight_history (destination_airport)
+
+flight_history (1) ------- (1) sales_data
+MATCH BY:
+    - flight_history.flight_date = sales_data.flight_date
+    - CONCAT(origin_airport, '-', destination_airport) = sales_data.route
+
+live_flights is independent (real-time API data)
+-----------------------------------------------
+live_flights does not have foreign keys because
+live API flights may not match historical records.
+-----------------------------------------------
+
+========================================
+TABLE LIST & KEYS
+========================================
+
+1. airline_info
+   - airline_code (PK)
+   - airline_name
+   - country
+
+2. airport_info
+   - iata (PK)
+   - airport_name
+   - city
+   - country
+   - latitude
+   - longitude
+
+3. flight_history
+   - id (PK)
+   - flight_date
+   - airline (FK → airline_info.airline_code)
+   - flight_number
+   - origin_airport (FK → airport_info.iata)
+   - destination_airport (FK → airport_info.iata)
+   - dep_delay
+   - arr_delay
+   - distance
+   - cancelled
+   - *other delay columns*
+
+4. sales_data
+   - id (PK)
+   - flight_date
+   - airline (FK → airline_info.airline_code)
+   - route
+   - seats_sold
+   - ticket_price
+   - revenue
+   - class
+
+5. live_flights
+   - id (PK)
+   - flight_number
+   - airline
+   - departure_airport
+   - arrival_airport
+   - status
+   - delay
+   - latitude
+   - longitude
+   - timestamp

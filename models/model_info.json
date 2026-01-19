@@ -1,0 +1,21 @@
+{
+    "model_name": "Flight Delay Prediction Model",
+    "algorithm": "RandomForestClassifier",
+    "training_data": "US flights dataset",
+    "target": "Arrival delay > 15 minutes",
+    "features": [
+      "airline",
+      "origin",
+      "destination",
+      "crs_dep_hour",
+      "distance",
+      "dep_delay",
+      "taxi_out",
+      "month",
+      "dayofweek"
+    ],
+    "accuracy": "82%",
+    "evaluation_metric": "ROC-AUC",
+    "last_trained": "2025-11-20"
+  }
+  
