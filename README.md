@@ -102,18 +102,31 @@ streamlit run app.py
 
 ---
 
-## 📊 Screenshots
+## 📊 Screenshots Of Website Pages
 
 **Flight Tracker Page**
-![Flight Tracker](assets/flight-tracker.png)
 
-**Delay Analyzer Page**
-![Delay Analyzer](assets/airplane.png)
+![Flight Tracker](assets/Page1.png)
 
-**Revenue Page**
-![Power BI Revenue](dashboard/powerbi_revenue.png)
+![Flight Tracker](assets/page1(1).png)
+
+**Flight Delay Prediction Page**
+
+![Flight Delay Prediction](assets/page2.png)
+
+![Flight Delay Prediction](assets/page2(1).png)
+
+**Airline Comparison Page**
+
+![Airline Comparison Page](assets/page3.png)
+
+![Airline Comparison Page](assets/page3(1).png)
 
 ---
+
+
+## 📊 Screenshots Of Power BI Dashboard
+
 
 **Revenue Dashboard**
 
